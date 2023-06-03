@@ -1,0 +1,19 @@
+body {
+  text-align: right;
+}
+
+#text-input {
+  display: block;
+  margin: 10px auto;
+  width: 300px;
+  height: 100px;
+}
+
+#btn-escrever {
+  display: block;
+  margin: 10px auto;
+}
+#imagem {
+  width: 2480px;
+  height: 3508px;
+}
