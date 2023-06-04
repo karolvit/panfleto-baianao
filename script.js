@@ -51,9 +51,23 @@ window.onload = function () {
     textOverlayProd.textContent = "Produto " + textInputProd.value; //text-prod + text-input-prod
     textOverlayCod.textContent = "Cor " + textInputCod.value; //text-cod + text-input-cod
     textOverlayCor.textContent = textInputCor.value; //text-cor + text-input-cor
-    textOverlaySemJuros.textContent = textInputSemJuros.value + "X Sem Juros"; //text-semjuros + text-input-semjuros
+    textOverlaySemJuros.textContent = textInputSemJuros.value + ""; //text-semjuros + text-input-semjuros
     textOverlayAvista.textContent = textInputAvista.value; //text-avista + text-input-avista
     textOverlayCartao.textContent = textInputCartao.value; //text-cartao + text-input-cartao
-    textInput.textContent = "Validade da promoção " + textInputValidade.value; //
+    textInput.textContent = "" + textInputValidade.value; //
   });
 };
+
+const btnGenerate = document.querySelector("#generate-pdf");
+
+btnGenerate.addEventListener("click", () => {
+  const container = document.querySelector("#image-container");
+
+  const options = {
+    filename: "arquivo.pdf",
+    html2canvas: { scale: 2 },
+    jsDPF: { unit: "mm", format: "a4", oruentation: "portrait" },
+  };
+
+  html2pdf().set(options).from(container).save();
+});

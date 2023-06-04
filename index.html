@@ -2,59 +2,65 @@
 <html>
   <head>
     <link rel="stylesheet" href="./style-textos.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
-    />
+    <link rel="stylesheet" href="./style.css" />
     <title>Escrever em Imagem</title>
-    <style></style>
+    <script src="script.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
-    <div id="image-container">
-      <img src="./carta.jpeg" alt="Imagem" id="imagem" />
-      <div class="card-img-overlay">
-        <!-- Sobrescrever imagem-->
-        <div id="text-prod"></div>
-        <!-- Nome do produto -->
-        <div id="text-cod"></div>
-        <!-- Código do produto -->
-        <div id="text-cor"></div>
-        <!-- Cor do produto -->
-        <div id="text-semjuros"></div>
-        <!-- Valor de vezes sem juros -->
-        <div id="text-center"></div>
-        <!-- Valor do Produto  -->
-        <div id="text-avista"></div>
-        <!-- Valor Avista -->
-        <div id="text-cartao"></div>
-        <!-- Valor no Cartão -->
-        <div id="text-validade"></div>
-        <!-- Validade da oferta -->
+    <div id="container" style="display: flex">
+      <div id="image-container">
+        <img src="./carta.jpeg" alt="Imagem" id="imagem" />
+        <div class="card-img-overlay">
+          <!-- Sobrescrever imagem-->
+          <div id="text-prod"></div>
+          <!-- Nome do produto -->
+          <div id="text-cod"></div>
+          <!-- Código do produto -->
+          <div id="text-cor"></div>
+          <!-- Cor do produto -->
+          <div id="text-semjuros"></div>
+          <!-- Valor de vezes sem juros -->
+          <div id="text-center"></div>
+          <!-- Valor do Produto  -->
+          <div id="text-avista"></div>
+          <!-- Valor Avista -->
+          <div id="text-cartao"></div>
+          <!-- Valor no Cartão -->
+          <div id="text-validade"></div>
+          <!-- Validade da oferta -->
+        </div>
+      </div>
+      <div id="formulario">
+        <textarea id="text-input-prod" placeholder="PROD"></textarea>
+        <!-- Inserindo o Produto -->
+        <textarea id="text-input-cod" placeholder="COD"></textarea>
+        <!-- Inserindo o código produto -->
+        <textarea id="text-input-cor" placeholder="COR"></textarea>
+        <!-- Inserindo cor do produto -->
+        <textarea id="text-input-semjuros" placeholder="Sem juros"></textarea>
+        <!-- Inserindo quantas vezes sem juros -->
+        <textarea
+          id="text-input"
+          placeholder="Digite seu texto central"
+        ></textarea>
+        <!-- Inserindo o valor depois da divisão sem juros -->
+        <textarea id="text-input-avista" placeholder="Valor Avista"></textarea>
+        <textarea
+          id="text-input-cartao"
+          placeholder="Valor no cartão"
+        ></textarea>
+        <input type="date" id="text-input-validade" />
+        <button id="btn-escrever">Enviar</button>
+        <button id="generate-pdf">Gerar PDF</button>
+        <!-- Botão para registrar as informações -->
+        <!-- Ligação com JavaScript -->
       </div>
     </div>
-    <textarea id="text-input-prod" placeholder="PROD"></textarea>
-    <!-- Inserindo o Produto -->
-    <textarea id="text-input-cod" placeholder="COD"></textarea>
-    <!-- Inserindo o código produto -->
-    <textarea id="text-input-cor" placeholder="COR"></textarea>
-    <!-- Inserindo cor do produto -->
-    <textarea id="text-input-semjuros" placeholder="Sem juros"></textarea>
-    <!-- Inserindo quantas vezes sem juros -->
-    <textarea id="text-input" placeholder="Digite seu texto central"></textarea>
-    <!-- Inserindo o valor depois da divisão sem juros -->
-    <textarea id="text-input-avista" placeholder="Valor Avista"></textarea>
-    <textarea id="text-input-cartao" placeholder="Valor no cartão"></textarea>
-    <input type="date" id="text-input-validade" />
-    <button id="btn-escrever">Enviar</button>
-    <!-- Botão para registrar as informações -->
-
-    <script src="script.js"></script>
-    <!-- Ligação com JavaScript -->
   </body>
 </html>
